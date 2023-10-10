@@ -1,25 +1,27 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+const listArticles = [
+  {
+    id: "251475",
+    titre: "Les nouvelles de la journée",
+    contenu:
+      "e Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.",
+  },
+  {
+    id: "251445",
+    titre: "Les nouvelles de la journée d'hier",
+    contenu:
+      "e Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.",
+  },
+];
 
-export default function Article(props) {
-	props === true
-		? console.log(props)
-		: console.log("No props here in Article !");
+export default function Article() {
+  let { id } = useParams();
+  const article = listArticles.filter(article => article.id === id)[0];
 
-	if (props === true) {
-		return (
-			<>
-				<h1>Ma page article ({props.match.params.id})</h1>
-				{props.location.state &&
-				props.location.state.fromHome ? (
-					<p>Cliqué depuis accueil</p>
-				) : null}
-			</>
-		);
-	} else {
-		return (
-			<>
-				<p>Composant Article sans props :-(</p>
-			</>
-		);
-	}
+  return (
+    <>
+      <h2>{article.titre}</h2>;<p>{article.contenu}</p>
+    </>
+  );
 }
