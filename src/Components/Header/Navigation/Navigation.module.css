@@ -1,7 +1,20 @@
 .Navigation {
   display: flex;
-  margin: 0;
-  padding: 0;
+  flex-flow: column wrap;
   list-style-type: none;
   text-decoration: none;
+  text-align: left;
+  margin: 0.5% 0;
+  width: 10%;
+
+  border: red solid 1px;
 }
+
+.Navigation svg {
+  margin: 0 5px 0 0;
+  width: 20px;
+  height: 20px;
+  justify-content: center
+}
+
+
