@@ -10,7 +10,9 @@ export default function Header() {
 				className={["container", classes.flex].join(
 					" "
 				)}></div>
-			<div className={classes.logo}>Cloning Twitter</div>
+			<div className={classes.logo}>
+				<h1>Cloning Twitter</h1>
+			</div>
 			<nav>
 				<Navigation />
 			</nav>

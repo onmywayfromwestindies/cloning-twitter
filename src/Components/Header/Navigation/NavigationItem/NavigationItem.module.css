@@ -1,14 +1,19 @@
 .NavigationItem {
-	margin: 2rem;
+	margin: 5rem 1rem;
+
 }
 
 .NavigationItem a {
 	text-decoration: none;
-	color: #383e56;
+	color: #1B262C;
+	font-size: 1.2rem;
+	font-weight: 200;
 }
 
 .NavigationItem a:hover,
 .NavigationItem a:focus,
 .NavigationItem a:active {
-	color: #fb743e;
+	color: #3282B8;
+	text-decoration: underline 1px solid #BBE1FA;
+	transition: all 1s;
 }
